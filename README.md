@@ -1,5 +1,14 @@
 # Ember-cli-deploy-front-end-builds
 
+This is alpha software!
+
+# TODO
+
+- [ ] Docs / README.md
+- [ ] Plugin pack
+- [ ] Tests
+- [ ] Setup travis
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
