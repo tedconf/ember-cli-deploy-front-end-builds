@@ -1,34 +1,29 @@
-# Ember-cli-deploy-front-end-builds
+# Front end builds (Ember.JS)
 
-This is alpha software!
+If you are deploying an Ember.JS application to a front end builds
+server then you should probably check out the [Front end builds
+pack](https://github.com/tedconf/ember-cli-deploy-front-end-builds-pack)
 
-# TODO
+## Configuration
 
-- [ ] Docs / README.md
-- [ ] Plugin pack
-- [ ] Tests
-- [ ] Setup travis
+You `config/deploy.js` has the following options.
 
-This README outlines the details of collaborating on this Ember addon.
+Property | Type | Required | Example | Notes
+---
+`app` |  `string` | Yes | `my-blog` | The name of your application on the front end builds server.
+`endpoint` | `string` | Yes | `http://www.ted.com` | The hostname where you front end builds server lives.
+`privateKey` | `string` | No | `/home/me/feb.key` | The path to the private key used to sign your builds.
+`requestOptions | `object` | No | `{}` | Additional params to pass to the [request](https://github.com/request/request) object.
 
-## Installation
+### Example config
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+```javascript
+// config/deploy.js
 
-## Running
+ENV['front-end-builds'] = {
+  app: 'my-blog',
+  endpoint: 'http://www.ted.com',
+  privateKey: '/home/ryan/feb/id_rsa'
+};
+```
 
-* `ember server`
-* Visit your app at http://localhost:4200.
-
-## Running Tests
-
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [http://www.ember-cli.com/](http://www.ember-cli.com/).
