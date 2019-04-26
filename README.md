@@ -6,24 +6,45 @@ pack](https://github.com/tedconf/ember-cli-deploy-front-end-builds-pack).
 
 ## Configuration
 
+| Property         | Type     | Required | Example              | Notes                                                                                  |
+| ---------------- | -------- | -------- | -------------------- | -------------------------------------------------------------------------------------- |
+| `app`            | `string` | Yes      | `my-blog`            | The name of your application on the front end builds server.                           |
+| `endpoint`       | `string` | Yes      | `http://www.ted.com` | The hostname where you front end builds server lives.                                  |
+| `privateKey`     | `string` | No       | `/home/me/feb.key`   | The path to the private key used to sign your builds.                                  |
+| `requestOptions` | `object` | No       | `{}`                 | Additional params to pass to the [request](https://github.com/request/request) object. |
+
+## Compatibility
+
+- Ember.js v2.18 or above
+- Ember CLI v2.13 or above
+
+## Installation
+
 `config/deploy.js` has the following options.
 
-Property | Type | Required | Example | Notes
---- | --- | --- | --- | ---
-`app` |  `string` | Yes | `my-blog` | The name of your application on the front end builds server.
-`endpoint` | `string` | Yes | `http://www.ted.com` | The hostname where you front end builds server lives.
-`privateKey` | `string` | No | `/home/me/feb.key` | The path to the private key used to sign your builds.
-`requestOptions` | `object` | No | `{}` | Additional params to pass to the [request](https://github.com/request/request) object.
+| Property         | Type     | Required | Example              | Notes                                                                                  |
+| ---------------- | -------- | -------- | -------------------- | -------------------------------------------------------------------------------------- |
+| `app`            | `string` | Yes      | `my-blog`            | The name of your application on the front end builds server.                           |
+| `endpoint`       | `string` | Yes      | `http://www.ted.com` | The hostname where you front end builds server lives.                                  |
+| `privateKey`     | `string` | No       | `/home/me/feb.key`   | The path to the private key used to sign your builds.                                  |
+| `requestOptions` | `object` | No       | `{}`                 | Additional params to pass to the [request](https://github.com/request/request) object. |
 
 ### Example config
 
 ```javascript
 // config/deploy.js
 
-ENV['front-end-builds'] = {
-  app: 'my-blog',
-  endpoint: 'http://www.ted.com',
+ENV["front-end-builds"] = {
+  app: "my-blog",
+  endpoint: "http://www.ted.com",
   privateKey: process.env.FEB_DEPLOY_KEY
 };
 ```
 
+## Contributing
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE.md).
