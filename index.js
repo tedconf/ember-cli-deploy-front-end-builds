@@ -1,4 +1,3 @@
-/* jshint node: true */
 'use strict';
 
 var BasePlugin = require('ember-cli-deploy-plugin');
@@ -6,9 +5,8 @@ var passwdUser = require('passwd-user');
 
 var FrontEndBuildsNotifier = require('./lib/front-end-builds-notifier');
 
-
 module.exports = {
-  name: 'ember-cli-deploy-front-end-builds',
+  name: require('./package').name,
 
   createDeployPlugin: function(options) {
     var homedir = passwdUser.sync(process.getuid()).homedir;
@@ -21,10 +19,7 @@ module.exports = {
         requestOptions: {}
       },
 
-      requiredConfig: [
-        'app',
-        'endpoint'
-      ],
+      requiredConfig: ['app', 'endpoint'],
 
       didUpload: function(context) {
         var notifier = new FrontEndBuildsNotifier({
