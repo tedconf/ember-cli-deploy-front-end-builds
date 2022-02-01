@@ -1,3 +1,8 @@
+# Deprecation Notice
+
+TED has shifted to React and will no longer maintain this application/library. If you wish to continue using this application/library, please create a pull request and repo ownership can be transferred. This repository will be archived at the end of 2022.
+
+
 # Front end builds (Ember.JS)
 
 If you are deploying an Ember.JS application to a front end builds
